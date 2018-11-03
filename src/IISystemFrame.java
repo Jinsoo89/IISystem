@@ -39,20 +39,23 @@ public class IISystemFrame extends JFrame {
         measles = new javax.swing.JTextField();
         DPT = new javax.swing.JLabel();
         dpt = new javax.swing.JTextField();
+        NEXTSCHEDULE = new javax.swing.JLabel();
+        next = new javax.swing.JTextField();
         rightPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        resultList = new javax.swing.JList<>();
         bottomPanel = new javax.swing.JPanel();
         regiButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
         searchButton = new javax.swing.JButton();
         searchOption = new javax.swing.JComboBox<>();
-        resultList = new javax.swing.JList<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(550, 400));
-        setMinimumSize(new java.awt.Dimension(550, 400));
-        setPreferredSize(new java.awt.Dimension(550, 400));
+        setMaximumSize(new java.awt.Dimension(600, 450));
+        setMinimumSize(new java.awt.Dimension(600, 450));
+        setPreferredSize(new java.awt.Dimension(600, 450));
         setResizable(false);
-        setSize(new java.awt.Dimension(550, 400));
+        setSize(new java.awt.Dimension(600, 450));
 
         mainLabel.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         mainLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -68,12 +71,13 @@ public class IISystemFrame extends JFrame {
         FIRST.setText("FIRST");
         FIRST.setMinimumSize(new java.awt.Dimension(10, 30));
 
-        first.setToolTipText("");
+        first.setToolTipText("ex) Choi, CHOI, choi");
         first.setMinimumSize(new java.awt.Dimension(10, 30));
 
         LAST.setText("LAST");
         LAST.setMinimumSize(new java.awt.Dimension(10, 30));
 
+        last.setToolTipText("ex) Jinsoo, JINSOO, jinsoo");
         last.setMinimumSize(new java.awt.Dimension(10, 30));
 
         DOB.setText("DOB");
@@ -85,7 +89,7 @@ public class IISystemFrame extends JFrame {
         SEX.setText("SEX");
         SEX.setMinimumSize(new java.awt.Dimension(10, 30));
 
-        sex.setToolTipText("ex) m");
+        sex.setToolTipText("M for male, F for female");
         sex.setMinimumSize(new java.awt.Dimension(10, 30));
 
         MALARIA.setText("MALARIA");
@@ -107,6 +111,13 @@ public class IISystemFrame extends JFrame {
         dpt.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         dpt.setMinimumSize(new java.awt.Dimension(10, 30));
 
+        NEXTSCHEDULE.setText("Next Schedule");
+        NEXTSCHEDULE.setMinimumSize(new java.awt.Dimension(10, 30));
+
+        next.setToolTipText("ex) 2018-10-31");
+        next.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        next.setMinimumSize(new java.awt.Dimension(10, 30));
+
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
@@ -114,22 +125,28 @@ public class IISystemFrame extends JFrame {
                         .addGroup(leftPanelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(FIRST, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(LAST, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(SEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(MALARIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(MEASLES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(DPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(21, 21, 21)
-                                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(dpt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(measles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(malaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(sex, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(last, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(first, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                        .addGroup(leftPanelLayout.createSequentialGroup()
+                                                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(FIRST, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(LAST, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(SEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(MALARIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(MEASLES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(DPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(39, 39, 39)
+                                                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(last, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(dob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(sex, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(malaria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(measles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(dpt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(first, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(leftPanelLayout.createSequentialGroup()
+                                                .addComponent(NEXTSCHEDULE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(next, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addContainerGap())
         );
         leftPanelLayout.setVerticalGroup(
@@ -162,7 +179,12 @@ public class IISystemFrame extends JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(dpt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(DPT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(DPT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(NEXTSCHEDULE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
         );
 
         rightPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Group Info"));
@@ -184,13 +206,13 @@ public class IISystemFrame extends JFrame {
                 rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(rightPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jScrollPane1)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                                 .addContainerGap())
         );
 
         bottomPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Control"));
 
-        regiButton.setText("Register");
+        regiButton.setText("REGISTER");
         regiButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -201,7 +223,18 @@ public class IISystemFrame extends JFrame {
             }
         });
 
-        searchButton.setText("Search");
+        updateButton.setText("UPDATE");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    updateButtonActionPerformed(evt);
+                } catch (Exception e) {
+
+                }
+            }
+        });
+
+        searchButton.setText("SEARCH");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -212,20 +245,22 @@ public class IISystemFrame extends JFrame {
             }
         });
 
-        searchOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Personal", "Ages", "Overdue", "Incomplete Mala", "Incomplete Meas", "Incomplete DPT" }));
+        searchOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PERSON", "OVERDUE", "INCOMPLETE MALARIA", "INCOMPLETE MEASLES", "INCOMPLETE DPT"}));
 
         javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
         bottomPanel.setLayout(bottomPanelLayout);
         bottomPanelLayout.setHorizontalGroup(
                 bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(bottomPanelLayout.createSequentialGroup()
-                                .addGap(56, 56, 56)
+                                .addContainerGap()
                                 .addComponent(regiButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(30, 30, 30)
+                                .addComponent(updateButton)
+                                .addGap(32, 32, 32)
                                 .addComponent(searchButton)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                                 .addComponent(searchOption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27))
+                                .addContainerGap())
         );
         bottomPanelLayout.setVerticalGroup(
                 bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +269,8 @@ public class IISystemFrame extends JFrame {
                                 .addGroup(bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(searchButton)
                                         .addComponent(regiButton)
-                                        .addComponent(searchOption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(searchOption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(updateButton))
                                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -244,24 +280,21 @@ public class IISystemFrame extends JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(mainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(leftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(bottomPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap())
+                                .addContainerGap()
+                                .addComponent(leftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bottomPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(mainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(leftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(leftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
                                         .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(bottomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -278,31 +311,64 @@ public class IISystemFrame extends JFrame {
         measles.setText("");
         malaria.setText("");
         dpt.setText("");
+        next.setText("");
     }
 
-    private void regiButtonActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
-        // TODO add your handling code here:
-        String f_name = first.getText();
-        String l_name = last.getText();
-        String s = sex.getText();
-        Date birth = Date.valueOf(dob.getText());
-        int mal = Integer.parseInt(malaria.getText());
-        int mea = Integer.parseInt(measles.getText());
-        int dpts = Integer.parseInt(dpt.getText());
+    private void regiButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here
+        try {
+            String f_name = first.getText();
+            String l_name = last.getText();
+            Date birth = Date.valueOf(dob.getText());
+            String s = sex.getText();
+            int mal = Integer.parseInt(malaria.getText());
+            int mea = Integer.parseInt(measles.getText());
+            int dpts = Integer.parseInt(dpt.getText());
+            Date schedule =  Date.valueOf(next.getText());
 
-        iis.register(f_name, l_name, s, birth, mal, mea, dpts);
+            iis.register(f_name, l_name, birth, s, mal, mea, dpts, schedule);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Patient already exist OR wrong input",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+    }
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+            String f_name = first.getText();
+            String l_name = last.getText();
+            Date birth = Date.valueOf(dob.getText());
+            String s = sex.getText();
+            int mal = Integer.parseInt(malaria.getText());
+            int mea = Integer.parseInt(measles.getText());
+            int dpts = Integer.parseInt(dpt.getText());
+            Date schedule;
+
+            if (next.getText().equals("COMPLETE")) {
+                System.out.println("HERE");
+                schedule = Date.valueOf("2000-01-01");
+            } else {
+                System.out.println("here");
+                schedule = Date.valueOf(next.getText());
+            }
+            iis.update(f_name, l_name, birth, s, mal, mea, dpts, schedule);
+
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
     }
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
-        // TODO add your handling code here:
-        if (searchOption.getSelectedItem() == "Personal") {
+        if (searchOption.getSelectedItem() == "PERSON") {
             String f_name = first.getText();
             String l_name = last.getText();
             Date birth = Date.valueOf(dob.getText());
 
             // call search function
             ResultSet rs = iis.patientInfo(f_name, l_name, birth);
-//            System.out.println(rs.toString());
 
             while (rs.next()) {
                 first.setText(rs.getString("f_name"));
@@ -312,16 +378,22 @@ public class IISystemFrame extends JFrame {
                 malaria.setText(String.valueOf(rs.getBoolean("malaria") ? 1 : 0));
                 measles.setText(String.valueOf(rs.getBoolean("measles") ? 1 : 0));
                 dpt.setText(String.valueOf(rs.getBoolean("dpt") ? 1 : 0));
+                if (rs.getBoolean("malaria") == true &&
+                        rs.getBoolean("measles") == true &&
+                        rs.getBoolean("dpt") == true) {
+                    next.setText("COMPLETE");
+                } else {
+                    next.setText(rs.getDate("schedule").toString());
+                }
             }
 
-        } else if (searchOption.getSelectedItem().equals("Ages")) {
-
-        } else if (searchOption.getSelectedItem().equals("Overdue")) {
+        } else if (searchOption.getSelectedItem().equals("OVERDUE")) {
             clearPerson();
             ResultSet rs = iis.searchOverdue();
 
             DefaultListModel listIncomplete = new DefaultListModel();
-            listIncomplete.addElement("Personal // Incomplete Immunization\n");
+            listIncomplete.addElement("Person // Incomplete Immunization");
+            listIncomplete.addElement(" ");
 
             while (rs.next()) {
                 Boolean mal = rs.getBoolean("malaria");
@@ -330,25 +402,22 @@ public class IISystemFrame extends JFrame {
 
                 String str = rs.getString("f_name") + " " +
                         rs.getString("l_name") + " " +
-                        rs.getDate("birth").toString() + " " +
-                        rs.getString("sex");
+                        rs.getDate("birth").toString() + " //";
 
                 if (mal == false) {
-                    str += " // malaria";
+                    str += " malaria";
                 }
                 if (mea == false) {
-                    str += " // measles";
+                    str += " measles";
                 }
                 if (dpt == false) {
-                    str += " // dpt";
+                    str += " dpt";
                 }
-
                 listIncomplete.addElement(str);
             }
-
             resultList.setModel(listIncomplete);
 
-        } else if (searchOption.getSelectedItem().equals("Incomplete Mala")) {
+        } else if (searchOption.getSelectedItem().equals("INCOMPLETE MALARIA")) {
             clearPerson();
             // call search incomplete malaria
             ResultSet rs = iis.incompleteMalaria();
@@ -364,10 +433,9 @@ public class IISystemFrame extends JFrame {
 
                 listIncomplete.addElement(str);
             }
-
             resultList.setModel(listIncomplete);
 
-        } else if (searchOption.getSelectedItem().equals("Incomplete Meas")) {
+        } else if (searchOption.getSelectedItem().equals("INCOMPLETE MEASLES")) {
             clearPerson();
             // call search incomplete malaria
             ResultSet rs = iis.incompleteMeasles();
@@ -383,8 +451,8 @@ public class IISystemFrame extends JFrame {
 
                 listIncomplete.addElement(str);
             }
-
             resultList.setModel(listIncomplete);
+
         } else {
             clearPerson();
             // call search incomplete DPT
@@ -401,7 +469,6 @@ public class IISystemFrame extends JFrame {
 
                 listIncomplete.addElement(str);
             }
-
             resultList.setModel(listIncomplete);
         }
     }
@@ -417,22 +484,25 @@ public class IISystemFrame extends JFrame {
     private javax.swing.JLabel LAST;
     private javax.swing.JLabel MALARIA;
     private javax.swing.JLabel MEASLES;
+    private javax.swing.JLabel NEXTSCHEDULE;
     private javax.swing.JLabel SEX;
     private javax.swing.JPanel bottomPanel;
     private javax.swing.JTextField dob;
     private javax.swing.JTextField dpt;
     private javax.swing.JTextField first;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField last;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JLabel mainLabel;
     private javax.swing.JTextField malaria;
     private javax.swing.JTextField measles;
+    private javax.swing.JTextField next;
     private javax.swing.JButton regiButton;
+    private javax.swing.JList<String> resultList;
     private javax.swing.JPanel rightPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JComboBox<String> searchOption;
     private javax.swing.JTextField sex;
-    private javax.swing.JList<String> resultList;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton updateButton;
     // End of variables declaration
 }
