@@ -2,8 +2,12 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import javax.swing.*;
 
+/*
+ * Main frame for Graphic User Interface
+ */
 public class IISystemFrame extends JFrame {
 
+    // Main model to use
     public IISystem iis;
 
     /**
@@ -303,6 +307,7 @@ public class IISystemFrame extends JFrame {
         pack();
     }// </editor-fold>
 
+    // clear all textfield
     private void clearPerson() {
         first.setText("");
         last.setText("");
@@ -314,6 +319,10 @@ public class IISystemFrame extends JFrame {
         next.setText("");
     }
 
+    /*
+     * Take user input in Text-Field and call register function
+     * To execute the register query
+     */
     private void regiButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here
         try {
@@ -336,6 +345,10 @@ public class IISystemFrame extends JFrame {
         }
     }
 
+    /*
+     * Take user input in Text-Field and call update function
+     * To execute the update query
+     */
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             String f_name = first.getText();
@@ -347,6 +360,8 @@ public class IISystemFrame extends JFrame {
             int dpts = Integer.parseInt(dpt.getText());
             Date schedule;
 
+            // handle case that there is no next schedule for patient
+            // who completed all immunization
             if (next.getText().equals("COMPLETE")) {
                 System.out.println("HERE");
                 schedule = Date.valueOf("2000-01-01");
@@ -361,7 +376,12 @@ public class IISystemFrame extends JFrame {
         }
     }
 
+    /*
+     * Take user input in Text-Field and call search function
+     * To execute the search query
+     */
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
+        // search option is PERSON
         if (searchOption.getSelectedItem() == "PERSON") {
             String f_name = first.getText();
             String l_name = last.getText();
@@ -370,6 +390,7 @@ public class IISystemFrame extends JFrame {
             // call search function
             ResultSet rs = iis.patientInfo(f_name, l_name, birth);
 
+            // display the result on GUI
             while (rs.next()) {
                 first.setText(rs.getString("f_name"));
                 last.setText(rs.getString("l_name"));
@@ -386,7 +407,7 @@ public class IISystemFrame extends JFrame {
                     next.setText(rs.getDate("schedule").toString());
                 }
             }
-
+        // Search option is OVERDUE
         } else if (searchOption.getSelectedItem().equals("OVERDUE")) {
             clearPerson();
             ResultSet rs = iis.searchOverdue();
@@ -416,7 +437,7 @@ public class IISystemFrame extends JFrame {
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
-
+        // Search option is INCOMPLETE MALARIA
         } else if (searchOption.getSelectedItem().equals("INCOMPLETE MALARIA")) {
             clearPerson();
             // call search incomplete malaria
@@ -429,12 +450,10 @@ public class IISystemFrame extends JFrame {
                         rs.getString("l_name") + " " +
                         rs.getDate("birth").toString() + " " +
                         rs.getString("sex");
-//                        String.valueOf(rs.getBoolean("malaria") ? 1 : 0);
-
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
-
+        // Search option is INCOMPLETE MEASLES
         } else if (searchOption.getSelectedItem().equals("INCOMPLETE MEASLES")) {
             clearPerson();
             // call search incomplete malaria
@@ -447,12 +466,10 @@ public class IISystemFrame extends JFrame {
                         rs.getString("l_name") + "  " +
                         rs.getDate("birth").toString() + "  " +
                         rs.getString("sex");
-//                        String.valueOf(rs.getBoolean("measles") ? 1 : 0);
-
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
-
+        // Search option is INCOMPLETE DPT
         } else {
             clearPerson();
             // call search incomplete DPT
@@ -465,8 +482,6 @@ public class IISystemFrame extends JFrame {
                         rs.getString("l_name") + "  " +
                         rs.getDate("birth").toString() + "  " +
                         rs.getString("sex");
-//                        String.valueOf(rs.getBoolean("dpt") ? 1 : 0);
-
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
