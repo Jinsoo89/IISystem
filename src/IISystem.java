@@ -2,15 +2,21 @@ import java.sql.*;
 import java.util.Properties;
 import java.io.FileInputStream;
 
+/*
+ * Main model for IISystem,
+ * connect the program to database in external server,
+ * and contain functions that create queries to get
+ * data from the database
+ */
 public class IISystem {
-    String JDBC_DRIVER;
-    String DB_URL;
-    String DB_USER;
-    String DB_PW;
+    private String JDBC_DRIVER;
+    private String DB_URL;
+    private String DB_USER;
+    private String DB_PW;
 
     private String configFilename = "src/dbconn.properties";
     private Properties configProps = new Properties();
-    Connection conn;
+    private Connection conn;
 
     public IISystem() throws Exception {
         openConnection();
