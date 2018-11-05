@@ -411,7 +411,7 @@ public class IISystemFrame extends JFrame {
         } else if (searchOption.getSelectedItem().equals("OVERDUE")) {
             clearPerson();
             ResultSet rs = iis.searchOverdue();
-
+            // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
             listIncomplete.addElement("Person // Incomplete Immunization");
             listIncomplete.addElement(" ");
@@ -442,7 +442,7 @@ public class IISystemFrame extends JFrame {
             clearPerson();
             // call search incomplete malaria
             ResultSet rs = iis.incompleteMalaria();
-
+            // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
 
             while (rs.next()) {
@@ -458,7 +458,7 @@ public class IISystemFrame extends JFrame {
             clearPerson();
             // call search incomplete malaria
             ResultSet rs = iis.incompleteMeasles();
-
+            // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
 
             while (rs.next()) {
@@ -474,7 +474,7 @@ public class IISystemFrame extends JFrame {
             clearPerson();
             // call search incomplete DPT
             ResultSet rs = iis.incompleteDPT();
-
+            // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
 
             while (rs.next()) {
