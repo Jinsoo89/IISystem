@@ -1,3 +1,8 @@
+/*
+ * Name: Jinsoo Choi
+ * NetID: jinsoo89
+ */
+
 import java.sql.Date;
 import java.sql.ResultSet;
 import javax.swing.*;
@@ -326,6 +331,7 @@ public class IISystemFrame extends JFrame {
     private void regiButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here
         try {
+            // get all text input from Graphic User Interface
             String f_name = first.getText();
             String l_name = last.getText();
             Date birth = Date.valueOf(dob.getText());
@@ -335,6 +341,7 @@ public class IISystemFrame extends JFrame {
             int dpts = Integer.parseInt(dpt.getText());
             Date schedule =  Date.valueOf(next.getText());
 
+            // call IISystem's register function
             iis.register(f_name, l_name, birth, s, mal, mea, dpts, schedule);
 
         } catch (Exception e) {
@@ -351,6 +358,7 @@ public class IISystemFrame extends JFrame {
      */
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
+            // get all text input from Graphic User Interface
             String f_name = first.getText();
             String l_name = last.getText();
             Date birth = Date.valueOf(dob.getText());
@@ -369,6 +377,7 @@ public class IISystemFrame extends JFrame {
                 System.out.println("here");
                 schedule = Date.valueOf(next.getText());
             }
+            // call IISystem's update function
             iis.update(f_name, l_name, birth, s, mal, mea, dpts, schedule);
 
         } catch (Exception e) {
@@ -407,6 +416,7 @@ public class IISystemFrame extends JFrame {
                     next.setText(rs.getDate("schedule").toString());
                 }
             }
+
         // Search option is OVERDUE
         } else if (searchOption.getSelectedItem().equals("OVERDUE")) {
             clearPerson();
@@ -416,6 +426,7 @@ public class IISystemFrame extends JFrame {
             listIncomplete.addElement("Person // Incomplete Immunization");
             listIncomplete.addElement(" ");
 
+            // display the list
             while (rs.next()) {
                 Boolean mal = rs.getBoolean("malaria");
                 Boolean mea = rs.getBoolean("measles");
@@ -437,6 +448,7 @@ public class IISystemFrame extends JFrame {
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
+
         // Search option is INCOMPLETE MALARIA
         } else if (searchOption.getSelectedItem().equals("INCOMPLETE MALARIA")) {
             clearPerson();
@@ -445,6 +457,7 @@ public class IISystemFrame extends JFrame {
             // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
 
+            // display the list on the GUI
             while (rs.next()) {
                 String str = rs.getString("f_name") + " " +
                         rs.getString("l_name") + " " +
@@ -453,6 +466,7 @@ public class IISystemFrame extends JFrame {
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
+
         // Search option is INCOMPLETE MEASLES
         } else if (searchOption.getSelectedItem().equals("INCOMPLETE MEASLES")) {
             clearPerson();
@@ -469,6 +483,7 @@ public class IISystemFrame extends JFrame {
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
+
         // Search option is INCOMPLETE DPT
         } else {
             clearPerson();
@@ -477,6 +492,7 @@ public class IISystemFrame extends JFrame {
             // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
 
+            // display the list on the GUI
             while (rs.next()) {
                 String str = rs.getString("f_name") + "  " +
                         rs.getString("l_name") + "  " +
