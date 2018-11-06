@@ -4,6 +4,8 @@
     <list default="true" id="e98fe073-98c4-4f7f-87b9-f6bfec6758a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IISystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IISystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IISystemFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IISystemFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IISystemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IISystemGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,14 +39,15 @@
     <session id="-180321223">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,15 +77,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9097" />
-          <entry key="properties" value="116" />
+          <entry key="java" value="9396" />
+          <entry key="properties" value="162" />
           <entry key="sql" value="885" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9093" />
-          <entry key="Properties" value="116" />
+          <entry key="JAVA" value="9392" />
+          <entry key="Properties" value="162" />
           <entry key="SQL" value="55" />
           <entry key="Scratch" value="834" />
         </counts>
@@ -96,9 +99,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/IISystem.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2370">
-                  <caret line="158" column="35" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
+                <state relative-caret-position="285">
+                  <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
                   <folding>
+                    <element signature="e#0#6386#0" expanded="true" />
                     <element signature="imports" expanded="true" />
                   </folding>
                 </state>
@@ -109,12 +113,13 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/IISystemFrame.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="482" column="63" lean-forward="true" selection-start-line="482" selection-start-column="63" selection-end-line="482" selection-end-column="63" />
+                <state relative-caret-position="294">
+                  <caret line="428" column="44" selection-start-line="428" selection-start-column="44" selection-end-line="428" selection-end-column="44" />
                   <folding>
+                    <element signature="e#0#29369#0" expanded="true" />
                     <element signature="imports" expanded="true" />
                     <element signature="docComment;method#initComponents#0;class#IISystemFrame#0" />
                   </folding>
@@ -122,22 +127,21 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/IISystemGUI.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#0#488#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/dbconn.properties">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-                </state>
-              </provider>
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
         </leaf>
@@ -174,10 +178,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0414582a-d1a9-4033-b81e-7f4eee274bf7/console.sql" />
         <option value="$PROJECT_DIR$/src/IISystemGUI.form" />
         <option value="$PROJECT_DIR$/src/IISystemView.java" />
-        <option value="$PROJECT_DIR$/src/dbconn.properties" />
-        <option value="$PROJECT_DIR$/src/IISystemFrame.java" />
         <option value="$PROJECT_DIR$/src/IISystem.java" />
         <option value="$PROJECT_DIR$/src/IISystemGUI.java" />
+        <option value="$PROJECT_DIR$/src/dbconn.properties" />
+        <option value="$PROJECT_DIR$/src/IISystemFrame.java" />
       </list>
     </option>
   </component>
@@ -200,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -212,12 +215,7 @@
             <path>
               <item name="IISystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="IISystem" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IISystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IISystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IISystem" type="b2602c69:ProjectViewProjectNode" />
@@ -227,6 +225,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,17 +295,19 @@
       <workItem from="1541016206199" duration="7798000" />
       <workItem from="1541226960390" duration="1377000" />
       <workItem from="1541404566796" duration="528000" />
-      <workItem from="1541455848210" duration="1043000" />
+      <workItem from="1541455848210" duration="3133000" />
+      <workItem from="1541475902722" duration="478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53272000" />
+    <option name="totallyTimeSpent" value="55840000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1002" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1002" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11767838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118743345" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -315,7 +316,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22697368" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22637363" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -323,7 +324,7 @@
       <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.49919224" weight="0.32857144" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" visible="true" weight="0.32747254" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" weight="0.32747254" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50080776" side_tool="true" weight="0.32857144" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32822758" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -382,37 +383,38 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbconn.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IISystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2370">
-          <caret line="158" column="35" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
+        <state relative-caret-position="285">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding>
+            <element signature="e#0#6386#0" expanded="true" />
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IISystemFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="482" column="63" lean-forward="true" selection-start-line="482" selection-start-column="63" selection-end-line="482" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#initComponents#0;class#IISystemFrame#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IISystemGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        <state relative-caret-position="45">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#488#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IISystemFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="428" column="44" selection-start-line="428" selection-start-column="44" selection-end-line="428" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#29369#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#initComponents#0;class#IISystemFrame#0" />
+          </folding>
         </state>
       </provider>
     </entry>
