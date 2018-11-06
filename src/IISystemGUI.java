@@ -1,3 +1,8 @@
+/*
+ * Name: Jinsoo Choi
+ * NetID: jinsoo89
+ */
+
 import javax.swing.*;
 
 /*

@@ -1,3 +1,8 @@
+/*
+ * Name: Jinsoo Choi
+ * NetID: jinsoo89
+ */
+
 import java.sql.*;
 import java.util.Properties;
 import java.io.FileInputStream;

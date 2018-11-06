@@ -423,8 +423,6 @@ public class IISystemFrame extends JFrame {
             ResultSet rs = iis.searchOverdue();
             // list to display on the right panel
             DefaultListModel listIncomplete = new DefaultListModel();
-            listIncomplete.addElement("Person // Incomplete Immunization");
-            listIncomplete.addElement(" ");
 
             // display the list
             while (rs.next()) {
@@ -434,16 +432,16 @@ public class IISystemFrame extends JFrame {
 
                 String str = rs.getString("f_name") + " " +
                         rs.getString("l_name") + " " +
-                        rs.getDate("birth").toString() + " //";
+                        rs.getDate("birth").toString() + " |";
 
                 if (mal == false) {
-                    str += " malaria";
+                    str += " MALA";
                 }
                 if (mea == false) {
-                    str += " measles";
+                    str += " MEAS";
                 }
                 if (dpt == false) {
-                    str += " dpt";
+                    str += " DPT";
                 }
                 listIncomplete.addElement(str);
             }
@@ -461,8 +459,8 @@ public class IISystemFrame extends JFrame {
             while (rs.next()) {
                 String str = rs.getString("f_name") + " " +
                         rs.getString("l_name") + " " +
-                        rs.getDate("birth").toString() + " " +
-                        rs.getString("sex");
+                        rs.getDate("birth").toString();
+
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
@@ -476,10 +474,10 @@ public class IISystemFrame extends JFrame {
             DefaultListModel listIncomplete = new DefaultListModel();
 
             while (rs.next()) {
-                String str = rs.getString("f_name") + "  " +
-                        rs.getString("l_name") + "  " +
-                        rs.getDate("birth").toString() + "  " +
-                        rs.getString("sex");
+                String str = rs.getString("f_name") + " " +
+                        rs.getString("l_name") + " " +
+                        rs.getDate("birth").toString();
+
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
@@ -494,10 +492,10 @@ public class IISystemFrame extends JFrame {
 
             // display the list on the GUI
             while (rs.next()) {
-                String str = rs.getString("f_name") + "  " +
-                        rs.getString("l_name") + "  " +
-                        rs.getDate("birth").toString() + "  " +
-                        rs.getString("sex");
+                String str = rs.getString("f_name") + " " +
+                        rs.getString("l_name") + " " +
+                        rs.getDate("birth").toString();
+
                 listIncomplete.addElement(str);
             }
             resultList.setModel(listIncomplete);
